@@ -1,8 +1,12 @@
 ---
 layout: post
-title:  "Belajar Ansible"
+title:  Belajar Ansible
 date:   2015-09-21 18:31:00
 categories: Ansible
+tags:
+  - Ansible
+  - DevOps
+  - Learning
 ---
 
 
