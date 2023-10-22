@@ -9,4 +9,4 @@ See Related: [[Humility is the knowing of the epistemic gap]]
 
 ## References
 
-Raghuveer S. (2018). _Journal Entry_
+Raghuveer S. (2018). _Photography Entry_

@@ -52,10 +52,10 @@ defaults:
       content-type: notes
   - scope:
       path: ""
-      type: journals
+      type: photography
     values:
-      layout: journal-entry
-      content-type: journals
+      layout: photography-entry
+      content-type: photography
 
 # Allows all pages to be put into `_pages` folder
 # for easier navigation and better SEO.
@@ -66,9 +66,9 @@ collections:
   notes:
     output: true
     permalink: /notes/:title
-  journals:
+  photography:
     output: true
-    permalink: /journals/:title
+    permalink: /photography/:title
 
 # Exclude from processing.
 exclude:

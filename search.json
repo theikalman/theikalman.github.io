@@ -13,7 +13,7 @@ layout: null
     },
   {% endfor %}
 
-  {% for post in site.journals %}
+  {% for post in site.photography %}
     {
 
       "title"    : "{{ post.title | strip_html | escape }}",

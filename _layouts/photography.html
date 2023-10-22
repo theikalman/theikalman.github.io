@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{{ content }}
+
+{% assign photos = site.photography %}
+
+<div class="photography">
+    <h2 class="content-subhead">Recent Photographs</h2>
+
+    {%- if photos.size > 0 -%}
+        {%- assign date_format = site.minima.date_format | default: "%B %-d, %Y" -%}
+
+        {%- for photo in photos -%}
+            <section class="photography">
+                <header class="photography-header">
+                    <small>
+                        <h2 class="post-title">
+                            <a href="{{ photo.url | relative_url }}">
+                                {{ photo.title | escape }}
+                            </a>
+                        </h2>
+                    </small>
+                </header>
+
+                <div class="photo-description">
+                    <p>
+                        <em>{{ photo.content | escape | truncate: 300}}</em>
+                    </p>
+                </div>
+            </section>
+        {%- endfor -%}
+    </div>
+
+
+    <br/>
+
+{%- endif -%}
