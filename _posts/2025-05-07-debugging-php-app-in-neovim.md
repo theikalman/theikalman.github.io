@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Debugging PHP App in NeoVim with Launch Configuration"
-date:   2025-05-07 06:00:00
+date:   2025-05-06 06:00:00
 categories: Dev Documentation
 tags:
     - Development
