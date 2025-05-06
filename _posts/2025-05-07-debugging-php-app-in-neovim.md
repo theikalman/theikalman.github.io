@@ -9,9 +9,11 @@ tags:
 ---
 
 Sometimes I need to debug PHP code in two different situations: a CLI (command-line) app and a web server app. While the way to run each one is slightly different, the steps are subtle, and I often forget the correct order for each case.
+
 ### NeoVim Plugin
 - `mfussenegger/nvim-dap`
 - `kristijanhusak/vim-dadbod-ui`
+
 ### Project Directory Structure
 Assuming we have this project directory structure:
 ```
@@ -189,11 +191,13 @@ Here is running order for CLI App:
 1. Add breakpoint in `App.php`
 2. Run the *Listen for Xdebug* from launch configuration
 3. Run the cli with command: `XDEBUG_CONFIG="idekey=NEOVIM" php -c .user.ini ./vendor/bin/phpunit src/App.php`
+
 ### For Server App
 It is much more simple to run server app:
 1. Add breakpoint in `index.php`
 2. Run *Built-in Server with Xdebug*
 3. Trigger breakpoint by sending request to the corresponding routing/endpoint.
+
 ### Notes
 I am not sure why the server is not shutting down when I stop the debugger for server app, I will need to figure out later, but a workaround for this is to manually kill the server with this command:
 ```shell
