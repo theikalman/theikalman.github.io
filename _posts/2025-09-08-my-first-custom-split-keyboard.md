@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My First Custom Split Keyboard with Raspberry Pi Pico"
-date:   2025-09-08 14:00:00
+date:   2025-09-07 14:00:00
 categories: Dev Documentation
 tags:
     - Development
