@@ -37,12 +37,12 @@ keep the familiar QWERTY layout but remove the traditional staggered rows —
 which I’ve come to realize aren’t really ergonomic at all. Ortholinear was the
 perfect middle ground: it’s cleaner, easier on the hands, and still intuitive.
 
-![/postimages/IMG_20250326_122404.jpg]
-![/postimages/IMG_20250326_122321.jpg]
-![/postimages/IMG_20250326_122327.jpg]
-![/postimages/IMG_20250326_150536.jpg]
-![/postimages/IMG_20250326_150545.jpg]
-![/postimages/IMG_20250326_150549.jpg]
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_122404.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_122321.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_122327.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_150536.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_150545.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_150549.jpg)
 
 ---
 
@@ -53,29 +53,29 @@ to have a CNC machine that is used to use for making their logo from acrylic
 for their hijab business, so I designed the keyboard case as a sandwich-style
 build with that.
 
-![/postimages/IMG_20250327_130202.jpg]
-![/postimages/IMG_20250327_130441.jpg]
-![/postimages/IMG_20250327_130445.jpg]
-![/postimages/IMG_20250327_130450.jpg]
-![/postimages/IMG_20250327_135544.jpg]
-![/postimages/IMG_20250327_135548.jpg]
-![/postimages/IMG_20250327_135601.jpg]
-![/postimages/IMG_20250327_135606.jpg]
-![/postimages/IMG_20250327_135611.jpg]
-![/postimages/IMG_20250330_103405.jpg]
-![/postimages/IMG_20250330_103522.jpg]
-![/postimages/IMG_20250330_122529.jpg]
-![/postimages/IMG_20250330_122540.jpg]
-![/postimages/IMG_20250330_124239.jpg]
-![/postimages/IMG_20250330_124242.jpg]
-![/postimages/IMG_20250404_081853.jpg]
-![/postimages/IMG_20250404_081906.jpg]
-![/postimages/IMG_20250404_081912.jpg]
-![/postimages/IMG_20250404_081918.jpg]
-![/postimages/IMG_20250404_081924.jpg]
-![/postimages/IMG_20250404_081933.jpg]
-![/postimages/IMG_20250404_082008.jpg]
-![/postimages/IMG_20250409_234659.jpg]
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_130202.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_130441.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_130445.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_130450.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_135544.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_135548.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_135601.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_135606.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_135611.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_103405.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_103522.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_122529.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_122540.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_124239.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_124242.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081853.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081906.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081912.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081918.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081924.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081933.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_082008.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250409_234659.jpg)
 
 ---
 
@@ -87,9 +87,9 @@ one for each half. I’m running KMK firmware, a Python-based firmware built for
 custom keyboards. KMK is especially nice if you’re already comfortable with
 Python; it makes defining layers, combos, and key behavior straightforward.
 
-![/postimages/IMG_20250411_094339.jpg]
-![/postimages/IMG_20250411_094348.jpg]
-![/postimages/IMG_20250417_081701.jpg]
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250411_094339.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250411_094348.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250417_081701.jpg)
 
 ---
 
@@ -101,7 +101,7 @@ relaxed and wrists straight, while the ortholinear layout reduces finger
 movement strain. It's a night-and-day difference from standard keyboards for
 me.
 
-![/postimages/IMG_20250423_151918.jpg]
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250423_151918.jpg)
 
 ---
 
@@ -113,8 +113,8 @@ version — something I can toss into a backpack and use on the go. I’m also
 considering integrating a custom cable solution or going wireless if power
 efficiency allows.
 
-![/postimages/IMG_20250417_134233.jpg]
-![/postimages/IMG_20250417_134240.jpg]
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250417_134233.jpg)
+![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250417_134240.jpg)
 
 ---
 
