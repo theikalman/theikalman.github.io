@@ -41,8 +41,6 @@ perfect middle ground: it’s cleaner, easier on the hands, and still intuitive.
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_122321-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_122327-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_150536-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_150545-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_150549-small.jpg)
 
 ---
 
@@ -54,26 +52,14 @@ for their hijab business, so I designed the keyboard case as a sandwich-style
 build with that.
 
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_130202-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_130441-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_130445-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_130450-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_135544-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_135548-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_135601-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_135606-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250327_135611-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_103405-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_103522-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_122529-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_122540-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_124239-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250330_124242-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081853-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081906-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081912-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081918-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081924-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_081933-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250404_082008-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250409_234659-small.jpg)
 
