@@ -39,7 +39,6 @@ perfect middle ground: it’s cleaner, easier on the hands, and still intuitive.
 
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_122404-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_122321-small.jpg)
-![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_122327-small.jpg)
 ![My First Custom Keyboard with RaspBerry Pi](/postimages/IMG_20250326_150536-small.jpg)
 
 ---
