@@ -115,13 +115,5 @@ custom, I highly recommend diving into the world of DIY keyboards. You don’t
 need a 3D printer, and you don’t need to switch to a weird layout — just start
 simple and iterate. Even there's a lot of pre-made, read-to-build custom split
 keyboard that is available in some eCommerce website, you probably wanted to go
-that route if you prefer to just build it. A few months ago, I started
-experiencing wrist pain — specifically in my left hand — a clear sign of RSI
-(Repetitive Strain Injury). As a software engineer, I type all day, and I
-realized I couldn’t ignore the discomfort any longer.
-
-So I decided to take matters into my own hands — literally — by building a
-custom split keyboard that better fit my ergonomic needs. The result? Not only
-did I learn a lot through the process, but my RSI pain is now completely gone
-after just two months of daily use.
+that route if you prefer to just build it.
 
