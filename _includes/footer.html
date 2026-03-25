@@ -1,38 +1,12 @@
-<hr/>
-
 <footer class="footer">
-    <div class="pure-menu pure-menu-horizontal">
-        <ul>
-            <li class="pure-menu-item">
-                <a class="pure-menu-link" href="/">
-                    <i class="fas fa-home"></i>
-                    <span class="md-display">Home</span>
-                </a>
-            </li>
-            <li class="pure-menu-item">
-                <a class="pure-menu-link" href="https://instagram.com/{{site.instagram}}">
-                    <i class="fab fa-instagram"></i>
-                    <span class="md-display">Instagram</span>
-                </a>
-            </li>
-            <li class="pure-menu-item">
-                <a class="pure-menu-link" href="https://github.com/{{site.github}}">
-                    <i class="fab fa-github"></i>
-                    <span class="md-display">GitHub</span>
-                </a>
-            </li>
-            <li class="pure-menu-item">
-                <a class="pure-menu-link" href="mailto:{{site.email}}">
-                    <i class="fas fa-paper-plane"></i>
-                    <span class="md-display">E-mail</span>
-                </a>
-            </li>
-            <li class="pure-menu-item">
-                <a class="pure-menu-link" href="https://github.com/{{site.repository}}">
-                    <i class="fas fa-code"></i>
-                    <span class="md-display">Source Code</span>
-                </a>
-            </li>
-        </ul>
+    <div class="footer-links">
+        <a href="https://github.com/{{site.github}}" target="_blank" rel="noopener">github</a>
+        <a href="https://instagram.com/{{site.instagram}}" target="_blank" rel="noopener">instagram</a>
+        <a href="mailto:{{site.email}}">email</a>
+        <a href="/feed.xml">rss</a>
     </div>
+    <p class="footer-text">
+        <span class="prompt">$</span> <span class="prompt-user">echo -n</span> "© 2026 AjiYakin"<br>
+        <span class="text-muted">Built with <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> • Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></span>
+    </p>
 </footer>

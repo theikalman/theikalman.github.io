@@ -5,11 +5,18 @@ layout: default
 <article class="post-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">{{ page.title | escape }}</h2>
-        {%- include post-data.html -%}
+        <div class="post-meta">
+            <span>{{ page.date | date: "%Y-%m-%d" }}</span>
+            {%- if page.author -%}
+            <span>by {{ page.author }}</span>
+            {%- endif -%}
+            {%- if page.tags -%}
+            <span>| tags: {% for tag in page.tags %}<a href="/tags/#{{ tag }}">#{{ tag }}</a> {% endfor %}</span>
+            {%- endif -%}
+        </div>
     </header>
 
-    <div articlebody" class="post-body itemprop=">
+    <div class="post-content" itemprop="articlebody">
         {{ content }}
     </div>
 

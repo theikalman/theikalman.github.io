@@ -46,12 +46,6 @@ defaults:
       avatar: assets/profile-sm.png
   - scope:
       path: ""
-      type: notes
-    values:
-      layout: post
-      content-type: notes
-  - scope:
-      path: ""
       type: photography
     values:
       layout: photography-entry
@@ -63,9 +57,6 @@ collections:
   pages:
     output: true
     permalink: /:title
-  notes:
-    output: true
-    permalink: /notes/:title
   photography:
     output: true
     permalink: /photography/:title
