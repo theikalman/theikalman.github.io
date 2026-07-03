@@ -8,8 +8,6 @@ tags:
     - Documentation
 ---
 
-# Two Months in the Trenches: How Deeply Integrating AI Redefined My Engineering Workflow
-
 The narrative around AI in software engineering usually oscillates between two
 extremes: it is either a magic wand that replaces developers or a glorified
 autocomplete that generates bugs.
