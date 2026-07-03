@@ -21,6 +21,8 @@ Here is what I learned shifting from a traditional coding workflow to an
 AI-accelerated one, building full-stack feature implementations using
 **Golang** for the backend and **Flutter** for the frontend.
 
+---
+
 ## The Tech Stack & Tooling Shift
 
 My experiment was split into two distinct phases over the span of 60 days. In
