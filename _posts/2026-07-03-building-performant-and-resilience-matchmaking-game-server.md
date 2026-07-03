@@ -144,7 +144,7 @@ Five scripts handle the complete lifecycle:
 4. **Heartbeat** - refresh worker heartbeat + all lock TTLs
 5. **Reclaim Tickets** - find stale workers, return their tickets to queue
 
-![Lua Script Flow](assets/diagrams/lua-script-flow.svg)
+![Lua Script Flow](/postimages/lua-script-flow.svg)
 
 ## Fault Tolerance: The Supervisor Pattern
 
