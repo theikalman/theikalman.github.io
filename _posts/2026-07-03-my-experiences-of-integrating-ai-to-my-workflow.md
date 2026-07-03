@@ -21,8 +21,6 @@ Here is what I learned shifting from a traditional coding workflow to an
 AI-accelerated one, building full-stack feature implementations using
 **Golang** for the backend and **Flutter** for the frontend.
 
----
-
 ## The Tech Stack & Tooling Shift
 
 My experiment was split into two distinct phases over the span of 60 days. In
@@ -40,8 +38,6 @@ completely changed how I interacted with the machine.
 As the weeks went by, my velocity skyrocketed. The more I used these tools, the
 faster features went from ideation to production. But the real breakthrough
 wasn't just using AI—it was learning *how* to talk to it.
-
----
 
 ## From "Blind Prompting" to Context-Driven Directives
 
@@ -69,8 +65,6 @@ consume significantly more tokens than concise backend Go code. Feeding UI
 layouts, state management, and widgets into the context window gets expensive
 quickly. While the holistic approach saved me massive amounts of
 context-switching time, it definitely hit the wallet harder.
-
----
 
 ## The Cognitive Trade-Offs: Atrophy of the Mind
 
@@ -105,8 +99,6 @@ love.
 > without any AI assistance. Paradoxically, using AI to save time at work has
 > made my personal schedule much busier, just to maintain my mental edge.
 
----
-
 ## Guardrails & The Reality of the "AI Myth"
 
 Despite using these tools heavily, I maintain a strict boundaries policy: **I
@@ -120,8 +112,6 @@ Clients now expect complex features to be completed in a matter of minutes
 because they believe the AI does all the work. I find myself spending more time
 and effort managing expectations, educating clients, and explaining the
 realities of software architecture than I used to.
-
----
 
 ## The Verdict: The Widening Gap in Software Engineering
 
