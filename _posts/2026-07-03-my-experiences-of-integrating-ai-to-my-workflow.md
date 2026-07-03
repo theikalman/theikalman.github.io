@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Two Months in the Trenches: How Deeply Integrating AI Redefined My Engineering Workflow"
-date:   2026-07-03 14:38:00
+date:   2026-07-02 14:38:00
 categories: Dev Documentation
 tags:
     - Development
