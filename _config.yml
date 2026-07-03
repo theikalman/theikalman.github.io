@@ -21,7 +21,7 @@
 title: "AjiYakin"
 email: ajiyakin91@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Blogging, photography, etc. Around AjiYakin thought.
+  Learning journal of Aji. Software Engineering, Photography, Life Lesson, and more.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://theikalman.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 repository: theikalman/theikalman.github.io
