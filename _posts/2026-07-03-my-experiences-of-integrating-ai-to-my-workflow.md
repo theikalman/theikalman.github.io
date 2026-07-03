@@ -8,13 +8,15 @@ tags:
     - Documentation
 ---
 
+# Two Months in the Trenches: How Deeply Integrating AI Redefined My Engineering Workflow
+
 The narrative around AI in software engineering usually oscillates between two
-extremes: it’s either a magic wand that replaces developers or a glorified
+extremes: it is either a magic wand that replaces developers or a glorified
 autocomplete that generates bugs.
 
 After spending the last two months deeply embedding AI into my daily
-engineering workflow, I’ve realized the truth is far more nuanced. It is an
-incredible force multiplier, but it comes with hidden costs—both financial and
+engineering workflow, I have realized the truth is far more nuanced. It is an
+incredible force multiplier, but it comes with hidden costs, both financial and
 cognitive.
 
 Here is what I learned shifting from a traditional coding workflow to an
@@ -29,19 +31,19 @@ completely changed how I interacted with the machine.
 
 * **Month 1 (The Editor Extension):** I started with **GitHub Copilot**
   integrated directly into Visual Studio Code. This felt like a natural
-  extension of traditional development—inline suggestions, quick chat sidebars,
-  and a relatively low friction point.
+  extension of traditional development, giving inline suggestions, quick chat
+  sidebars, and a relatively low friction point.
 * **Month 2 (The Terminal Takeover):** I switched gears to **Claude Code**,
   using their CLI tool. Moving the AI interface into the terminal shifted my
   workflow from *accepting suggestions* to *giving high-level directives*.
 
 As the weeks went by, my velocity skyrocketed. The more I used these tools, the
 faster features went from ideation to production. But the real breakthrough
-wasn't just using AI—it was learning *how* to talk to it.
+wasn't just using AI; it was learning *how* to talk to it.
 
 ## From "Blind Prompting" to Context-Driven Directives
 
-In the beginning, I asked the AI questions from a user-perspective or in
+In the beginning, I asked the AI questions from a user perspective or in
 high-level language. That was a mistake.
 
 I quickly discovered that **targeting specific files yields vastly superior and
@@ -57,8 +59,8 @@ Traditionally, I would build the backend endpoint in Go, test it, and then
 switch context to Flutter to consume it. AI changed my mental model.
 
 Instead of treating frontend and backend as separate silos, I began instructing
-the AI to **implement the feature as a whole ecosystem**. I’d ask it to write
-the Go endpoint and the Flutter UI implementation in a single breath.
+the AI to **implement the feature as a whole ecosystem**. I would ask it to
+write the Go endpoint and the Flutter UI implementation in a single breath.
 
 **The Catch? Token Costs.** Flutter and frontend code in general inherently
 consume significantly more tokens than concise backend Go code. Feeding UI
@@ -79,11 +81,11 @@ begins to fade.
 
 ### 2. Outsourcing Investigation
 
-I’ve noticed a decline in my urge to dive deep into debugging. Instead of
+I have noticed a decline in my urge to dive deep into debugging. Instead of
 reading through tracebacks or manually analyzing database states, my first
 instinct now is to dump raw logs, database query results, and error outputs
-directly into the AI and ask it to investigate. It’s highly efficient, but it
-feels like outsourcing the "soul" of engineering.
+directly into the AI and ask it to investigate. It is highly efficient, but it
+feels like outsourcing the soul of engineering.
 
 ### 3. Losing Touch with Implementation Details
 
@@ -93,7 +95,7 @@ smoothly, I move on. As a craftsman, this is a compromise I don't entirely
 love.
 
 > **Keeping the Mind Sharp Outside of Work**
-> To combat this cognitive decline, I’ve had to *consciously* schedule
+> To combat this cognitive decline, I have had to *consciously* schedule
 > intentional training sessions outside of work hours. I force myself to do
 > manual programming, practice data structures, and work through algorithms
 > without any AI assistance. Paradoxically, using AI to save time at work has
@@ -116,16 +118,16 @@ realities of software architecture than I used to.
 ## The Verdict: The Widening Gap in Software Engineering
 
 Ultimately, these past two months have proven to me that **AI is not a
-replacement for software engineers—it is a tool you must master to stay
+replacement for software engineers. It is a tool you must master to stay
 competitive.** AI is not going to replace the profession anytime soon because
 software engineering is about so much more than just churning out lines of
-code; it's about systems thinking, security, compliance, and understanding
+code; it is about systems thinking, security, compliance, and understanding
 human needs.
 
-However, AI *will* drastically widen the gap between two types of developers:
+However, AI will drastically widen the gap between two types of developers:
 
 1. **The Code Workers:** Those who rely on AI solely to churn out repetitive,
-   templated tasks (like standard CRUD applications).
+   templated tasks, such as standard CRUD applications.
 2. **The Systems Architects:** Those who use AI to blast through the
    boilerplate so they can focus their human intelligence on system
    architecture, deep technical design, and high-level problem-solving.
