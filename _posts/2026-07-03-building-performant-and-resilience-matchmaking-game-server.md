@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Building a Distributed Matchmaking System in Go"
-date:   2026-07-03 22:00:00
+date:   2026-07-03 18:00:00
 categories: Dev Documentation
 tags:
     - Development
