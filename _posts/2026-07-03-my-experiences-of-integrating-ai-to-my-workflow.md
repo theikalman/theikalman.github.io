@@ -95,6 +95,7 @@ smoothly, I move on. As a craftsman, this is a compromise I don't entirely
 love.
 
 > **Keeping the Mind Sharp Outside of Work**
+>
 > To combat this cognitive decline, I have had to *consciously* schedule
 > intentional training sessions outside of work hours. I force myself to do
 > manual programming, practice data structures, and work through algorithms
