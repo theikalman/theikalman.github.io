@@ -106,22 +106,22 @@ the code itself. As long as the integration tests pass and the feature works
 smoothly, I move on. As a craftsman, this is a compromise I don't entirely
 love.
 
-> **Keeping the Mind Sharp Outside of Work**
->
-> To combat this cognitive decline, I have had to *consciously* schedule
-> intentional training sessions outside of work hours. I force myself to do
-> manual programming, practice data structures, and work through algorithms
-> without any AI assistance. Paradoxically, using AI to save time at work has
-> made my personal schedule much busier, just to maintain my mental edge.
+#### Keeping the Mind Sharp Outside of Work
+
+To combat this cognitive decline, I have had to *consciously* schedule
+intentional training sessions outside of work hours. I force myself to do
+manual programming, practice data structures, and work through algorithms
+without any AI assistance. Paradoxically, using AI to save time at work has
+made my personal schedule much busier, just to maintain my mental edge.
 
 ### Guardrails & The Reality of the "AI Myth"
 
-Despite using these tools heavily, I maintain a strict boundaries policy: **I
-do not give AI access to everything.** Total autonomy is a security and
+Despite using these tools heavily, I maintain a strict boundaries policy: *I
+do not give AI access to everything*. Total autonomy is a security and
 operational risk I am not willing to take. Man-in-the-middle verification is
 still a mandatory part of my workflow.
 
-Furthermore, the industry hype has created an **"AI Myth"** among clients.
+Furthermore, the industry hype has created an "AI Myth" among clients.
 
 Clients now expect complex features to be completed in a matter of minutes
 because they believe the AI does all the work. I find myself spending more time
@@ -130,18 +130,18 @@ realities of software architecture than I used to.
 
 ### The Verdict: The Widening Gap in Software Engineering
 
-Ultimately, these past two months have proven to me that **AI is not a
+Ultimately, these past two months have proven to me that AI is not a
 replacement for software engineers. It is a tool you must master to stay
-competitive.** AI is not going to replace the profession anytime soon because
+competitive. AI is not going to replace the profession anytime soon because
 software engineering is about so much more than just churning out lines of
 code; it is about systems thinking, security, compliance, and understanding
 human needs.
 
 However, AI will drastically widen the gap between two types of developers:
 
-1. **The Code Workers:** Those who rely on AI solely to churn out repetitive,
+1. The Code Workers: Those who rely on AI solely to churn out repetitive,
    templated tasks, such as standard CRUD applications.
-2. **The Systems Architects:** Those who use AI to blast through the
+2. The Systems Architects: Those who use AI to blast through the
    boilerplate so they can focus their human intelligence on system
    architecture, deep technical design, and high-level problem-solving.
 
