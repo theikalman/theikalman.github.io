@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Two Months in the Trenches: How Deeply Integrating AI Redefined My Engineering Workflow"
+title:  "My Experience Integrating AI Into My Workflow for The Last Two Months"
 date:   2026-07-02 14:38:00
 categories: Dev Documentation
 tags:
@@ -9,46 +9,51 @@ tags:
 ---
 
 The narrative around AI in software engineering usually oscillates between two
-extremes: it is either a magic wand that replaces developers or a glorified
+extremes: it is either a magic wand that replaces developers or just-another
 autocomplete that generates bugs.
 
-After spending the last two months deeply embedding AI into my daily
+After spending the last two months trying to embed AI into my daily
 engineering workflow, I have realized the truth is far more nuanced. It is an
 incredible force multiplier, but it comes with hidden costs, both financial and
 cognitive.
 
-Here is what I learned shifting from a traditional coding workflow to an
-AI-accelerated one, building full-stack feature implementations using
-**Golang** for the backend and **Flutter** for the frontend.
+For the background, here is the tech stack that I use on daily basis:
+- I am developing CRUD app for multitenant aoutomotive workshop
+- Golang on the backend
+- Flutter on the frontend
 
 ## The Tech Stack & Tooling Shift
 
-My experiment was split into two distinct phases over the span of 60 days. In
-both scenarios, the technical execution was surprisingly smooth, but the UX
-completely changed how I interacted with the machine.
+My experiment was split into two AI agent provider that I use.
 
-* **Month 1 (The Editor Extension):** I started with **GitHub Copilot**
-  integrated directly into Visual Studio Code. This felt like a natural
-  extension of traditional development, giving inline suggestions, quick chat
-  sidebars, and a relatively low friction point.
-* **Month 2 (The Terminal Takeover):** I switched gears to **Claude Code**,
-  using their CLI tool. Moving the AI interface into the terminal shifted my
-  workflow from *accepting suggestions* to *giving high-level directives*.
+* Month 1 (VSCode + Copilot): I started with GitHub Copilot, simply because
+  it is cheap and also because my manager wanted to experiment with Copilot
+  while he himself uses Claude Code from day 1. The Copilot integrated
+  directly into Visual Studio Code. This felt like a natural extension of
+  traditional development, giving inline suggestions, quick chat sidebars,
+  and a relatively low friction point.
+* I switched gears to Claude Code, mostly because GitHub changed its pricing
+  to a usage-based model. Suddenly, my token usage went through the roof;
+  I maxed out my allowance in just three days, whereas I used to only hit
+  the 50% mark (granted, I used to use it less). It was a pretty steep pricing
+  jump. Moving to Claude's CLI tool and keeping the AI interface in the
+  terminal feels a lot less distracting. The workflow just feels smoother,
+  which makes sense since I prefer Neovim over VS Code anyway.
 
 As the weeks went by, my velocity skyrocketed. The more I used these tools, the
 faster features went from ideation to production. But the real breakthrough
-wasn't just using AI; it was learning *how* to talk to it.
+wasn't just using AI; it was learning how to talk to it.
 
 ## From "Blind Prompting" to Context-Driven Directives
 
 In the beginning, I asked the AI questions from a user perspective or in
-high-level language. That was a mistake.
+high-level language. And I feel less-satisfied with the result of it.
 
-I quickly discovered that **targeting specific files yields vastly superior and
-faster results** than letting the AI guess the context. Instead of asking
-*"Implement a user blocking feature,"* I learned to say *"Modify
+I quickly discovered that targeting specific files yields vastly superior and
+faster results than letting the AI guess the context. Instead of asking
+"Implement a user blocking feature," I learned to say "Modify
 `user_repository.go`, `user_handler.go`, and `profile_screen.dart` to support a
-blocking mechanism."* By feeding it the exact boundaries of the task, the
+blocking mechanism." By feeding it the exact boundaries of the task, the
 accuracy of the output reached near-perfection.
 
 ### Shifting to Holistic Feature Development
@@ -56,11 +61,20 @@ accuracy of the output reached near-perfection.
 Traditionally, I would build the backend endpoint in Go, test it, and then
 switch context to Flutter to consume it. AI changed my mental model.
 
-Instead of treating frontend and backend as separate silos, I began instructing
-the AI to **implement the feature as a whole ecosystem**. I would ask it to
-write the Go endpoint and the Flutter UI implementation in a single breath.
+Instead of treating the frontend and backend as separate silos, I found
+myself instructing the AI to build out the feature as a whole ecosystem.
+I started asking it to crank out the Go endpoint and the Flutter UI in a
+single breath. At first, I thought this habit contradicted my previous
+realization that detailed prompts work better than high-level "user-view"
+ones. But I realized I was actually hitting a sweet spot right in the
+middle: I was taking my own user-perspective goals and immediately
+translating them into a deeply technical blueprint. This became my go-to
+approach for building big features from scratch. The real turning point
+for me, though, was forcing myself to write a detailed implementation plan
+into a Markdown file first. It allowed me to thoroughly review the
+architecture and track my own progress as things came together.
 
-**The Catch? Token Costs.** Flutter and frontend code in general inherently
+The Catch? Token Costs. Flutter and frontend code in general inherently
 consume significantly more tokens than concise backend Go code. Feeding UI
 layouts, state management, and widgets into the context window gets expensive
 quickly. While the holistic approach saved me massive amounts of
