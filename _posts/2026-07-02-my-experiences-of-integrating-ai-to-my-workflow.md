@@ -131,11 +131,11 @@ realities of software architecture than I used to.
 ### The Verdict: The Widening Gap in Software Engineering
 
 Ultimately, these past two months have proven to me that AI is not a
-replacement for software engineers. It is a tool you must master to stay
-competitive. AI is not going to replace the profession anytime soon because
-software engineering is about so much more than just churning out lines of
-code; it is about systems thinking, security, compliance, and understanding
-human needs.
+replacement for software engineers. It is a tool that we have to master
+to stay competitive. AI is not going to replace the profession anytime
+soon because software engineering is about so much more than just churning
+out lines of code; it is about systems thinking, security, compliance,
+and understanding human needs.
 
 However, AI will drastically widen the gap between two types of developers:
 
@@ -145,6 +145,5 @@ However, AI will drastically widen the gap between two types of developers:
    boilerplate so they can focus their human intelligence on system
    architecture, deep technical design, and high-level problem-solving.
 
-AI won't take your job, but an engineer leveraging AI to think at a higher
-architectural level just might. The future belongs to those who know how to
-direct the machine, not just those who write the code.
+I think, AI won't take your job (at least now), but an engineer leveraging
+AI to think at a higher architectural level just might.
