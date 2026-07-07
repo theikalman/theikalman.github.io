@@ -22,7 +22,7 @@ For the background, here is the tech stack that I use on daily basis:
 - Golang on the backend
 - Flutter on the frontend
 
-## The Tech Stack & Tooling Shift
+### The Tech Stack & Tooling Shift
 
 My experiment was split into two AI agent provider that I use.
 
@@ -44,7 +44,7 @@ As the weeks went by, my velocity skyrocketed. The more I used these tools, the
 faster features went from ideation to production. But the real breakthrough
 wasn't just using AI; it was learning how to talk to it.
 
-## From "Blind Prompting" to Context-Driven Directives
+### From "Blind Prompting" to Context-Driven Directives
 
 In the beginning, I asked the AI questions from a user perspective or in
 high-level language. And I feel less-satisfied with the result of it.
@@ -56,7 +56,7 @@ faster results than letting the AI guess the context. Instead of asking
 blocking mechanism." By feeding it the exact boundaries of the task, the
 accuracy of the output reached near-perfection.
 
-### Shifting to Holistic Feature Development
+#### For the Case of Holistic Feature Development
 
 Traditionally, I would build the backend endpoint in Go, test it, and then
 switch context to Flutter to consume it. AI changed my mental model.
@@ -80,18 +80,18 @@ layouts, state management, and widgets into the context window gets expensive
 quickly. While the holistic approach saved me massive amounts of
 context-switching time, it definitely hit the wallet harder.
 
-## The Cognitive Trade-Offs: Atrophy of the Mind
+### The Cognitive Trade-Offs: Atrophy of the Mind
 
 While my output speed has never been higher, I began noticing unsettling shifts
 in my own engineering skills.
 
-### 1. Forgetting the Syntax
+#### 1. Forgetting the Syntax
 
 Slowly but surely, I am forgetting how to code without an assistant. When the
 AI handles the boilerplate, the syntax, and the typing, your muscle memory
 begins to fade.
 
-### 2. Outsourcing Investigation
+#### 2. Outsourcing Investigation
 
 I have noticed a decline in my urge to dive deep into debugging. Instead of
 reading through tracebacks or manually analyzing database states, my first
@@ -99,7 +99,7 @@ instinct now is to dump raw logs, database query results, and error outputs
 directly into the AI and ask it to investigate. It is highly efficient, but it
 feels like outsourcing the soul of engineering.
 
-### 3. Losing Touch with Implementation Details
+#### 3. Losing Touch with Implementation Details
 
 I find myself caring less and less about the granular implementation details of
 the code itself. As long as the integration tests pass and the feature works
@@ -114,7 +114,7 @@ love.
 > without any AI assistance. Paradoxically, using AI to save time at work has
 > made my personal schedule much busier, just to maintain my mental edge.
 
-## Guardrails & The Reality of the "AI Myth"
+### Guardrails & The Reality of the "AI Myth"
 
 Despite using these tools heavily, I maintain a strict boundaries policy: **I
 do not give AI access to everything.** Total autonomy is a security and
@@ -128,7 +128,7 @@ because they believe the AI does all the work. I find myself spending more time
 and effort managing expectations, educating clients, and explaining the
 realities of software architecture than I used to.
 
-## The Verdict: The Widening Gap in Software Engineering
+### The Verdict: The Widening Gap in Software Engineering
 
 Ultimately, these past two months have proven to me that **AI is not a
 replacement for software engineers. It is a tool you must master to stay
