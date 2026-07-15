@@ -35,7 +35,7 @@ and then crashes? Those players are stuck in limbo - the system thinks they're
 being processed, but nobody is handling them. They never get a match, and they
 can't re-queue.
 
-This post walks through how we built a production-grade matchmaking system in Go
+This post walks through how I built a production-grade matchmaking system in Go
 that solves both of these problems using Redis Lua scripting, a heartbeat-based
 supervisor pattern, and dynamic window expansion for match quality.
 
@@ -107,7 +107,7 @@ end
 Because this runs inside Redis' single-threaded event loop, two workers
 cannot claim the same ticket. The `NX` flag on `SET` ensures only one lock is
 ever granted. The `EX` with TTL ensures locks are automatically released if the
-worker crashes - the foundation of our fault tolerance.
+worker crashes - the foundation of its fault tolerance.
 
 ```
 ┌──────────┐         ┌──────────┐
@@ -225,7 +225,7 @@ Other workers pick them up on the next poll cycle.
 
 <video src="{{ '/postimages/heartbeat-reclaim.mp4' | relative_url }}" width="700" style="max-width: 100%; height: auto;" controls muted loop playsinline></video>
 
-We measure the result in the [Performance Benchmarks](#fault-recovery)
+I measure the result in the [Performance Benchmarks](#fault-recovery)
 section: when a worker is killed mid-batch, its in-flight tickets hold in
 `mm:proc:*` for the lease window, then the supervisor reclaims them and the
 remaining workers drain to zero. Zero tickets lost.
@@ -233,8 +233,8 @@ remaining workers drain to zero. Zero tickets lost.
 ## Match Quality: Window Expansion and Batch Selection
 
 The second design challenge is match quality under variable load. During peak
-hours, the queue is full of candidates, so we can afford to be picky. During
-off-peak hours, we need to widen the search to avoid players waiting forever.
+hours, the queue is full of candidates, so I can afford to be picky. During
+off-peak hours, I need to widen the search to avoid players waiting forever.
 
 The matchmaker package provides a time-weighted expansion of the MMR search
 window, used by the `Engine.FindMatch` seed-based matching path:
@@ -299,7 +299,7 @@ so the tightest 2-player window is almost always tighter than the tightest
 4-player window. Left unchecked, a mode with `MaxPlayers = 4` will tend to
 keep pairing off the closest 2 players instead of forming full 4-player
 matches, even when a perfectly reasonable 4-player match is available in the
-same batch. We address this either by normalizing spread by group size (e.g.
+same batch. I address this either by normalizing spread by group size (e.g.
 dividing by `N` or `N-1` before comparing windows) or by requiring the
 selector to prefer the target match size and only fall back to smaller
 matches once the batch is exhausted.
@@ -312,7 +312,7 @@ with lower concurrency where per-seed windowing is viable.
 
 ## Performance Benchmarks
 
-We ran the system through three benchmark scenarios to validate the design.
+I ran the system through three benchmark scenarios to validate the design.
 
 ### Latency vs. Concurrent Players
 
@@ -471,19 +471,19 @@ The `SET ... NX EX ttl` inside the ClaimTickets Lua script guarantees each
 ticket lock is acquired by exactly one worker, so across 4 × 3 = 12 competing
 claim attempts the assertion never sees a ticket claimed more than once.
 
-## What We Learned
+## What I Learned
 
 ### 1. Lua scripts are the killer feature of Redis
 
 Before Lua scripts, the only way to do atomic multi-key operations was with
 `WATCH`/`MULTI`/`EXEC` - optimistic locking that fails under contention. Lua
-scripts execute atomically on a single thread, which means our claim operation
+scripts execute atomically on a single thread, which means the claim operation
 reads, locks, removes, and stores in one shot. No contention, no retries, no
 double-booking.
 
 ### 2. Heartbeat + TTL is simpler than leader election
 
-Instead of implementing Raft or Paxos for fault tolerance, we use a 30-second
+Instead of implementing Raft or Paxos for fault tolerance, I use a 30-second
 lease with a background heartbeat. The supervisor doesn't elect new leaders - it
 just scans for expired leases and returns tickets to the pool. This is
 eventually consistent (it takes up to 30 seconds for a crash to be detected),
@@ -492,7 +492,7 @@ wait far more than they tolerate getting stuck in queue limbo forever.
 
 ### 3. Batch selection beats per-seed windowing for throughput
 
-We initially tried narrowing the Redis `ZRANGEBYSCORE` range to a per-seed MMR
+I initially tried narrowing the Redis `ZRANGEBYSCORE` range to a per-seed MMR
 window (±50 at t=0, expanding with wait time). On paper this produces perfect
 match quality - but in practice it caused massive release/re-claim churn: a
 worker claims 16 tickets, finds only 2 within the window, and releases the other
@@ -510,7 +510,7 @@ Integration tests run against a real Redis instance (`localhost:6379`, or
 This caught bugs that unit tests never would - subtle Lua scripting errors,
 incompatible Redis versions, and race conditions that only manifest under
 concurrent access. The `-tags=integration` build tag keeps these separate from
-fast unit tests, so developers still get quick feedback during development. We
+fast unit tests, so I still get quick feedback during development. I
 deliberately did not adopt a container-per-test harness like testcontainers-go:
 the suite assumes an externally provided Redis (started via `make docker-up` or
 any reachable instance), which keeps iteration fast and matches how CI is
@@ -526,7 +526,7 @@ and through Redis, and the match engine (`FormMatches`) runs *inside* each
 consumer's poll loop rather than on a separate "main matchmaking" goroutine.
 Each consumer polls Redis, claims a batch, forms matches, allocates a server,
 and publishes the result end-to-end. The heartbeater just refreshes lease TTLs
-on a ticker. Go's lightweight goroutines (not OS threads) let us scale to
+on a ticker. Go's lightweight goroutines (not OS threads) let it scale to
 hundreds of workers per host without breaking a sweat.
 
 ## Running the Demo
