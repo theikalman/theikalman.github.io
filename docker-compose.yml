@@ -1,0 +1,14 @@
+services:
+  jekyll:
+    image: jekyll/jekyll:4.0.1
+    command: bash -c "bundle install && jekyll serve --watch --force_polling --livereload -H 0.0.0.0"
+    ports:
+      - "4000:4000"
+      - "35729:35729" # Required for LiveReload to auto-refresh your browser
+    volumes:
+      - .:/srv/jekyll
+      # Storing your bundler cache prevents Docker from reinstalling gems on every start
+      - jekyll-gems:/usr/local/bundle 
+
+volumes:
+  jekyll-gems:

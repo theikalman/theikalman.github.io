@@ -225,6 +225,8 @@ The reclaim Lua script iterates all heartbeat keys, checks their TTL, and
 atomically moves any expired worker's processing tickets back to the queue.
 Other workers pick them up on the next poll cycle.
 
+<video src="{{ '/postimages/heartbeat-reclaim.mp4' | relative_url }}" width="700" style="max-width: 100%; height: auto;" controls muted loop playsinline></video>
+
 We measure the result in the [Performance Benchmarks](#fault-recovery)
 section: when a worker is killed mid-batch, its in-flight tickets hold in
 `mm:proc:*` for the lease window, then the supervisor reclaims them and the
@@ -290,6 +292,8 @@ churn; the batch approach claims 16 tickets and immediately forms 8 tight
 matches. In practice, the tightest-spread selection within a random batch still
 produces high-quality matches because the sliding window naturally finds the
 closest MMR pairs.
+
+<video src="{{ '/postimages/batch-match-selection.mp4' | relative_url }}" width="700" style="max-width: 100%; height: auto;" controls muted loop playsinline></video>
 
 The `CalculateSearchWindow` API remains available for deployment modes that
 prioritize match quality over throughput - for example, a ranked-mode queue
