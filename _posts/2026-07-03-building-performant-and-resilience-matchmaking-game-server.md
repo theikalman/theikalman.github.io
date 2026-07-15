@@ -8,9 +8,9 @@ tags:
     - Documentation
 ---
 
-*How to solve the double-booking problem, handle worker crashes, and scale to
+How can I solve the double-booking problem, handle worker crashes, and scale to
 thousands of concurrent players with Redis Lua scripts and fault-tolerant Go
-services.*
+services.
 
 ## The Problem
 
@@ -305,6 +305,8 @@ selector to prefer the target match size and only fall back to smaller
 matches once the batch is exhausted.
 
 <video src="{{ '/postimages/batch-match-selection.mp4' | relative_url }}" width="700" style="max-width: 100%; height: auto;" controls muted loop playsinline></video>
+
+*You can configure the playback of the video if it is too fast*
 
 The `CalculateSearchWindow` API remains available for deployment modes that
 prioritize match quality over throughput - for example, a ranked-mode queue
