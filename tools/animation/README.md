@@ -11,22 +11,37 @@ System deps (already installed via Homebrew): `ffmpeg`, `cairo`, `pango`.
 
 Scenes live in `scenes/`. Output goes to `media/` (gitignored).
 
+Use the Makefile instead of typing out `uv run manim` commands. By default it
+targets `scenes/example.py Example`; override with `FILE=` / `SCENE=`.
+
 Render a video (medium quality):
 
 ```sh
-uv run manim -qm scenes/example.py Example
+make video
 ```
 
 Render a single PNG (e.g. for embedding a still image in a blog post):
 
 ```sh
-uv run manim -s -qh scenes/example.py Example
+make png
 ```
 
 Render high quality video:
 
 ```sh
-uv run manim -qh scenes/example.py Example
+make hq
+```
+
+Target a different scene:
+
+```sh
+make png FILE=scenes/sliding_window.py SCENE=SlidingWindow
+```
+
+Remove rendered output:
+
+```sh
+make clean
 ```
 
 Output files land in `media/videos/<scene_file>/<quality>/` or `media/images/<scene_file>/` for stills.
