@@ -531,46 +531,7 @@ and publishes the result end-to-end. The heartbeater just refreshes lease TTLs
 on a ticker. Go's lightweight goroutines (not OS threads) let it scale to
 hundreds of workers per host without breaking a sweat.
 
-## Running the Demo
+---
 
-```bash
-# Start the full stack
-make docker-up-full
-
-# Seed 500 test players
-make seed
-
-# Run the load test (100 simulated players, 100ms spawn rate)
-make loadtest-go
-
-# Reproduce the latency-vs-concurrency benchmark from this post
-# (10ms spawn rate, ramps 10 -> 1000 concurrent players):
-./scripts/collect_latency_data.sh
-
-# Watch in Grafana: http://localhost:3000
-# (dashboards are provisioned automatically)
-
-# Test fault tolerance (kills a worker mid-process)
-make chaos
-
-# Stop everything
-make docker-down
-```
-
-To generate the charts and diagrams from this post:
-
-```bash
-# Ensure the stack is running
-make docker-up-full
-
-# Generate everything
-make artifacts
-
-# Or step by step:
-make charts     # Collect data + render PNGs
-make diagrams   # Render Mermaid → SVG
-```
-
-*Built with Go, Redis, gRPC, and Prometheus/Grafana. Full source code available
-[on GitHub](https://github.com/theikalman/matchmakinggames).*
-
+The source code for this system design exploration is available at my [GitHub
+Repository](https://github.com/theikalman/matchmakinggames).
