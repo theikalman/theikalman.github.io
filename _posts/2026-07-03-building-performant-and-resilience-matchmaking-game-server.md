@@ -8,8 +8,6 @@ tags:
     - Documentation
 ---
 
-> ⚠️ THIS POST IS STILL IN PROGRESS.
-
 *How to solve the double-booking problem, handle worker crashes, and scale to
 thousands of concurrent players with Redis Lua scripts and fault-tolerant Go
 services.*
