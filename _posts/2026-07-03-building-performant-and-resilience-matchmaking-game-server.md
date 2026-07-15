@@ -22,7 +22,7 @@ players, picks the closest MMR, and forms a match. This works fine - until you
 need to scale.
 
 Once you deploy multiple matchmaking workers to handle traffic, you hit a
-classic distributed systems problem: **the double-booking race condition**.
+classic distributed systems problem: the double-booking race condition.
 
 ```
 Worker A: "Player X has MMR 1500. I'll match them with Player Y."
@@ -73,13 +73,13 @@ The system has four decoupled components, each independently scalable:
 
 | Component | Role | Scale |
 |-----------|------|-------|
-| **Ingress** | HTTP/WebSocket API - accepts tickets | Horizontal (N instances) |
-| **Redis** | State coordination - queues, locks, metadata | Cluster mode |
-| **Workers** | Match algorithm - claims, evaluates, matches | Horizontal (N instances) |
-| **Supervisor** | Fault tolerance - reclaims stranded tickets | Singleton (or low-replica). Reclaim is a full `SCAN` over `mm:hb:*` keys (idempotent, safe to replica, but costs O(N) in worker count) |
-| **Server Manager** | gRPC control plane - game server pool | Singleton |
+| Ingress | HTTP/WebSocket API - accepts tickets | Horizontal (N instances) |
+| Redis | State coordination - queues, locks, metadata | Cluster mode |
+| Workers | Match algorithm - claims, evaluates, matches | Horizontal (N instances) |
+| Supervisor | Fault tolerance - reclaims stranded tickets | Singleton (or low-replica). Reclaim is a full `SCAN` over `mm:hb:*` keys (idempotent, safe to replica, but costs O(N) in worker count) |
+| Server Manager | gRPC control plane - game server pool | Singleton |
 
-The key insight: **Redis is the single source of truth**. No worker holds mutable
+The key insight: Redis is the single source of truth. No worker holds mutable
 state. Every operation - claiming tickets, heartbeating, releasing, reclaiming -
 runs as an atomic Lua script inside Redis. This eliminates race conditions
 without distributed locks.
@@ -106,8 +106,8 @@ for _, ticketID in ipairs(candidates) do
 end
 ```
 
-Because this runs inside Redis' single-threaded event loop, **two workers
-cannot claim the same ticket**. The `NX` flag on `SET` ensures only one lock is
+Because this runs inside Redis' single-threaded event loop, two workers
+cannot claim the same ticket. The `NX` flag on `SET` ensures only one lock is
 ever granted. The `EX` with TTL ensures locks are automatically released if the
 worker crashes - the foundation of our fault tolerance.
 
@@ -138,11 +138,11 @@ worker crashes - the foundation of our fault tolerance.
 
 Five scripts handle the complete lifecycle:
 
-1. **Claim Tickets** - atomically move tickets from queue → processing
-2. **Release Tickets** - return tickets from processing → queue (no match found)
-3. **Complete Tickets** - remove matched tickets from processing + delete locks
-4. **Heartbeat** - refresh worker heartbeat + all lock TTLs
-5. **Reclaim Tickets** - find stale workers, return their tickets to queue
+1. Claim Tickets - atomically move tickets from queue → processing
+2. Release Tickets - return tickets from processing → queue (no match found)
+3. Complete Tickets - remove matched tickets from processing + delete locks
+4. Heartbeat - refresh worker heartbeat + all lock TTLs
+5. Reclaim Tickets - find stale workers, return their tickets to queue
 
 <img src="/postimages/lua-script-flow.svg" alt="Lua Script Flow" width="600" style="max-width: 100%; height: auto;" />
 
@@ -230,7 +230,7 @@ Other workers pick them up on the next poll cycle.
 We measure the result in the [Performance Benchmarks](#fault-recovery)
 section: when a worker is killed mid-batch, its in-flight tickets hold in
 `mm:proc:*` for the lease window, then the supervisor reclaims them and the
-remaining workers drain to zero. **Zero tickets lost.**
+remaining workers drain to zero. Zero tickets lost.
 
 ## Match Quality: Window Expansion and Batch Selection
 
@@ -264,7 +264,7 @@ At time zero, a player with MMR 1500 searches within ±50 MMR (1500 ± 50). Afte
 waiting 10 seconds, the window expands to 1500 ± 150. After 45 seconds, it's
 ±500 - the maximum.
 
-However, the **high-throughput consumer** uses a different strategy. Instead of
+However, the high-throughput consumer uses a different strategy. Instead of
 narrowing the Redis `ZRANGEBYSCORE` range per-seed (which limits how many
 candidates a single poll can return), the consumer claims a batch of up to
 `MaxPlayers` tickets across the full MMR range and then selects the best matches
@@ -285,13 +285,26 @@ func (e *Engine) selectBestWindow(sorted []domain.Ticket) []domain.Ticket {
 }
 ```
 
-This **batch-claim + tightest-spread selection** approach trades slightly wider
+This batch-claim + tightest-spread selection approach trades slightly wider
 MMR matches for dramatically higher throughput. A seed-based window of ±50 MMR
 on a 10-player queue produces almost no matches and massive release/re-claim
 churn; the batch approach claims 16 tickets and immediately forms 8 tight
 matches. In practice, the tightest-spread selection within a random batch still
 produces high-quality matches because the sliding window naturally finds the
 closest MMR pairs.
+
+One subtlety worth calling out: minimizing raw MMR spread with no
+normalization for group size structurally biases `selectBestWindow` toward
+*smaller* matches. Extending a contiguous sorted window from *N* to *N+1*
+players can only keep the spread the same or grow it - it can never shrink -
+so the tightest 2-player window is almost always tighter than the tightest
+4-player window. Left unchecked, a mode with `MaxPlayers = 4` will tend to
+keep pairing off the closest 2 players instead of forming full 4-player
+matches, even when a perfectly reasonable 4-player match is available in the
+same batch. We address this either by normalizing spread by group size (e.g.
+dividing by `N` or `N-1` before comparing windows) or by requiring the
+selector to prefer the target match size and only fall back to smaller
+matches once the batch is exhausted.
 
 <video src="{{ '/postimages/batch-match-selection.mp4' | relative_url }}" width="700" style="max-width: 100%; height: auto;" controls muted loop playsinline></video>
 
@@ -327,7 +340,7 @@ This is the central correctness property: matched tickets are HDEL-ed from
 into the processing hash for the worker's lifetime (which previously caused
 `processing_depth` to grow monotonically and stranded tickets to be
 double-matched on supervisor reclamation). The clean, bounded drain confirms
-predictable throughput with **zero ticket leakage**.
+predictable throughput with zero ticket leakage.
 
 ### Fault Recovery
 
@@ -338,7 +351,7 @@ stay stranded in `mm:proc:*` while its heartbeat lease counts down. ~15 seconds
 later the supervisor detects the expired lease and reclaims the stranded
 tickets - the chart shows the processing depth step down to zero at that point,
 and the remaining workers drain both the reclaimed batch and the original
-backlog. **The system absorbs the failure transparently** - players don't see
+backlog. The system absorbs the failure transparently - players don't see
 their tickets vanish or get stuck.
 
 ## Implementation Details
@@ -411,10 +424,10 @@ The codebase includes three tiers of testing:
 
 | Tier | What | How |
 |------|------|-----|
-| **Unit tests** | Domain models, window expansion, server pool logic | Pure Go, no dependencies |
-| **Integration tests** | Redis Lua scripts, worker lifecycle, supervisor reclaim | Real Redis on `localhost:6379` (`-tags=integration`) |
-| **E2E tests** | Full pipeline: submit → match → server allocation → WS notification | Docker compose + real services |
-| **Chaos tests** | Kill workers mid-operation, verify fault tolerance | Shell script + `docker kill -9` |
+| Unit tests | Domain models, window expansion, server pool logic | Pure Go, no dependencies |
+| Integration tests | Redis Lua scripts, worker lifecycle, supervisor reclaim | Real Redis on `localhost:6379` (`-tags=integration`) |
+| E2E tests | Full pipeline: submit → match → server allocation → WS notification | Docker compose + real services |
+| Chaos tests | Kill workers mid-operation, verify fault tolerance | Shell script + `docker kill -9` |
 
 Lua script atomicity is tested with concurrent goroutines racing to claim the
 same tickets. From `internal/redis/client_test.go`, the
