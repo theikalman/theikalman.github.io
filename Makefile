@@ -1,4 +1,13 @@
-.PHONY: run stop clean new-post
+.PHONY: help run stop clean new-post
+
+.DEFAULT_GOAL := help
+
+help:
+	@echo "Available commands:"
+	@echo "  make run        Start the Jekyll dev server"
+	@echo "  make stop       Stop the running Jekyll container"
+	@echo "  make clean      Prune unused Docker resources"
+	@echo "  make new-post   Create a new post (TITLE=... CATEGORIES=... TAGS=...)"
 
 run:
 	docker run --rm -it \
