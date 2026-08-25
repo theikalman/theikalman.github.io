@@ -27,7 +27,7 @@ chain as the root of the failure:
 "The browser caches index.html, which contains references to all other files.
 If the browser serves a stale index.html, it loads stale references... The
 service worker makes it worse. Once installed, [it] aggressively caches
-everything... It’s a cache guarding a cache." — Adrien Gras
+everything... It’s a cache guarding a cache." - Adrien Gras
 
 The browser protects the index.html, which points to a stale
 flutter_service_worker.js, which then intercepts and serves stale assets from
