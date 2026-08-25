@@ -1,4 +1,4 @@
-.PHONY: help run stop clean new-post
+.PHONY: help run stop clean new-post taxonomy
 
 .DEFAULT_GOAL := help
 
@@ -8,6 +8,7 @@ help:
 	@echo "  make stop       Stop the running Jekyll container"
 	@echo "  make clean      Prune unused Docker resources"
 	@echo "  make new-post   Create a new post (TITLE=... CATEGORIES=... TAGS=...)"
+	@echo "  make taxonomy   List existing categories and tags (MODE=categories|tags|all)"
 
 run:
 	docker run --rm -it \
@@ -25,3 +26,6 @@ clean:
 
 new-post:
 	tools/new_post.sh "$(TITLE)" "$(CATEGORIES)" $(TAGS)
+
+taxonomy:
+	tools/list_taxonomy.sh $(MODE)
