@@ -4,7 +4,10 @@ title:  "TIL: Cache Busting in Flutter"
 date:   2026-08-25 00:00:01
 categories: Learning
 tags:
-    - Learning,TIL,Flutter,Development
+    - Learning
+    - TIL
+    - Flutter
+    - Development
 ---
 
 Recently, I found myself in a situation where I was stuck in the past, No, I mean my Flutter
