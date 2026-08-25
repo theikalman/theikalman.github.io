@@ -1,4 +1,4 @@
-.PHONY: run stop clean
+.PHONY: run stop clean new-post
 
 run:
 	docker run --rm -it \
@@ -13,3 +13,6 @@ stop:
 
 clean:
 	docker system prune -f
+
+new-post:
+	tools/new_post.sh "$(TITLE)" "$(CATEGORIES)" $(TAGS)
