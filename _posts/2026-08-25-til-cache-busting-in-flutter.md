@@ -10,9 +10,9 @@ tags:
     - Development
 ---
 
-Recently, I found myself in a situation where I was stuck in the past, No, I mean my Flutter
-Web app is not up-to-date, and I have to clear the browser cache to get it to get the latest
-changes.
+Recently, I found myself in a situation where I was stuck in the past, No, I
+mean my Flutter Web app is not up-to-date, and I have to clear the browser
+cache to get it to get the latest changes.
 
 ### The "Cache Guarding a Cache" Paradox
 
