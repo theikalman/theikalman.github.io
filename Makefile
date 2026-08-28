@@ -14,9 +14,10 @@ run:
 	docker run --rm -it \
 		-p 4000:4000 \
 		-v "$$PWD:/srv/jekyll" \
+		-v jekyll-gems:/usr/local/bundle \
 		-e JEKYLL_ENV=development \
-		jekyll/jekyll:4 \
-		jekyll serve --force_polling -H 0.0.0.0 -t
+		jekyll/jekyll:4.0.1 \
+		bash -c "bundle install && jekyll serve --force_polling -H 0.0.0.0 -t"
 
 stop:
 	docker stop jekyll
