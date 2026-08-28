@@ -27,6 +27,7 @@ url: "https://theikalman.github.io" # the base hostname & protocol for your site
 repository: theikalman/theikalman.github.io
 github: theikalman
 instagram: ajiyakin
+linkedin: ajiyakin
 
 header_image: assets/profile.png
 
@@ -37,8 +38,6 @@ author: AjiYakin
 author_bio: >-
   Hi, my name is Aji.
 author_pic: https://brennanbrown.ca/img/avatar.png
-paginate: 10
-paginate_path: "/:num/"
 
 markdown: kramdown
 
@@ -51,7 +50,6 @@ theme: null
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-paginate
 permalink: /:title
 
 defaults:

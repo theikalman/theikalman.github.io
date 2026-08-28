@@ -2,49 +2,10 @@
 layout: default
 ---
 
-<h2 class="section-title">Recent Posts</h2>
-
-{% if site.paginate %}
-    {% assign posts = paginator.posts %}
-{% else %}
-    {% assign posts = site.posts %}
-{% endif %}
+<h2 class="section-title">Blog</h2>
 
 <ul class="post-list">
-    {%- for post in posts -%}
-    <li class="post-item">
-        <div class="post-item-header">
-            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-            <h3 class="post-title">
-                <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-            </h3>
-        </div>
-        <p class="post-excerpt">{{ post.content | strip_html | escape | truncate: 200 }}</p>
-        {%- if post.tags -%}
-        <div class="post-tags">
-            {%- for tag in post.tags -%}
-            <span class="tag">#{{ tag }}</span>
-            {%- endfor -%}
-        </div>
-        {%- endif -%}
-    </li>
+    {%- for post in site.posts -%}
+    {%- include post-preview.html post=post -%}
     {%- endfor -%}
 </ul>
-
-{% if site.paginate %}
-<div class="pagination">
-    {%- if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">← prev</a>
-    {%- else %}
-    <span class="page-info">← prev</span>
-    {%- endif %}
-
-    <span class="page-info">{{ paginator.page }} / {{ paginator.total_pages }}</span>
-
-    {%- if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}">next →</a>
-    {%- else %}
-    <span class="page-info">next →</span>
-    {%- endif %}
-</div>
-{%- endif %}

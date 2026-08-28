@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<section class="intro">
+    <h2 class="section-title">whoami</h2>
+    <div class="about-section">
+        <div>
+            <p class="about-intro">
+                Senior Software Engineer with 10+ years of experience architecting cloud-native
+                microservices, IAM, and high-throughput real-time systems across gaming, fintech,
+                proptech, SaaS, media streaming, and B2B e-commerce.
+            </p>
+            <p>
+                I've scaled platforms to 3M+ daily active users, cut a trading orderbook's latency by
+                30%, and automated end-to-end billing for enterprise clients. My toolbox centers on Go,
+                Java, Python, TypeScript, and Kubernetes, and I've built IAM, matchmaking, real-time
+                lobby services, direct market-data pipelines, and DRM/licensing systems along the way.
+            </p>
+            <p>
+                These days I'm building a multi-tenant automotive workshop SaaS (Go, TypeScript, Flutter),
+                while working through an online Information Systems degree on the side.
+            </p>
+            <p>
+                I'm open to hire - and if you just wanted to chat, feel free to send me an
+                <a href="mailto:{{ site.email }}">email</a> or a
+                <a href="https://linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a> message.
+            </p>
+            <p>
+                <a href="/about">Read the full story &rarr;</a>
+            </p>
+        </div>
+        <div class="author-card">
+            <img class="author-avatar" src="/{{ site.header_image }}" alt="Photo of {{ site.author }}">
+            <div class="author-info">
+                <h3>{{ site.author }}</h3>
+                <p class="author-bio">Senior Software Engineer</p>
+                <div class="author-links">
+                    <a href="https://github.com/{{ site.github }}" target="_blank" rel="noopener">github</a>
+                    <a href="https://linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener">linkedin</a>
+                    <a href="mailto:{{ site.email }}">email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="latest-posts">
+    <h2 class="section-title">Latest Posts</h2>
+    <ul class="post-list">
+        {%- assign recent_posts = site.posts | slice: 0, 5 -%}
+        {%- for post in recent_posts -%}
+        {%- include post-preview.html post=post -%}
+        {%- endfor -%}
+    </ul>
+    <p><a href="/blog">&rarr; Read more posts</a></p>
+</section>

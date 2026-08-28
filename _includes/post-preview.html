@@ -1,0 +1,16 @@
+<li class="post-item">
+    <div class="post-item-header">
+        <span class="post-date">{{ include.post.date | date: "%Y-%m-%d" }}</span>
+        <h3 class="post-title">
+            <a href="{{ include.post.url | relative_url }}">{{ include.post.title | escape }}</a>
+        </h3>
+    </div>
+    <p class="post-excerpt">{{ include.post.content | strip_html | escape | truncate: 200 }}</p>
+    {%- if include.post.tags -%}
+    <div class="post-tags">
+        {%- for tag in include.post.tags -%}
+        <span class="tag">#{{ tag }}</span>
+        {%- endfor -%}
+    </div>
+    {%- endif -%}
+</li>
