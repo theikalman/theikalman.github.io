@@ -4,7 +4,8 @@
 // color alone (links are underlined, statuses have a glyph and a label), so
 // the palette stays readable for color-blind visitors. The steel blue accent
 // sits in a hue range that deuteranopia, protanopia and tritanopia all keep
-// distinct from the grays.
+// distinct from the grays. Every text tone, down to --fg-subtle, meets
+// WCAG AA (4.5:1) on all three surfaces in both themes.
 
 :root {
   --font-mono: 'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace;
@@ -37,12 +38,12 @@
   --line-strong: #38414b;
   --fg: #d5dae0;
   --fg-muted: #9aa3ad;
-  --fg-subtle: #6f7882;
+  --fg-subtle: #7d8690;
   --accent: #8fb0d3;
   --accent-strong: #b9cfe6;
   --accent-soft: rgba(143, 176, 211, 0.12);
 
-  --syn-comment: #6f7882;
+  --syn-comment: #7d8690;
   --syn-keyword: #c3ccd6;
   --syn-string: #a9c2a0;
   --syn-number: #d3b98f;
@@ -59,12 +60,12 @@
   --line-strong: #c9c9c3;
   --fg: #1f2328;
   --fg-muted: #4f5760;
-  --fg-subtle: #737b84;
+  --fg-subtle: #626a73;
   --accent: #2d5b86;
   --accent-strong: #1c3f61;
   --accent-soft: rgba(45, 91, 134, 0.08);
 
-  --syn-comment: #737b84;
+  --syn-comment: #626a73;
   --syn-keyword: #1f2328;
   --syn-string: #3f6a36;
   --syn-number: #8a5a12;
