@@ -1,0 +1,24 @@
+---
+layout: default
+title: By Date
+permalink: /dates/
+---
+
+{%- assign months = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" -%}
+
+<section class="index-page">
+    <h2 class="section-title">by date</h2>
+
+    <div class="index-grid">
+        {%- for month in months -%}
+        <section class="index-group" id="{{ month.name }}">
+            <h3 class="index-title">{{ month.name }} <span class="index-count">{{ month.items.size }}</span></h3>
+            <ul class="index-list">
+                {%- for post in month.items -%}
+                {%- include index-row.html doc=post -%}
+                {%- endfor -%}
+            </ul>
+        </section>
+        {%- endfor -%}
+    </div>
+</section>

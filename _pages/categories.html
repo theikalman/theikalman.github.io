@@ -1,0 +1,24 @@
+---
+layout: default
+title: Categories
+permalink: /categories/
+---
+
+{%- assign categories = site.categories | sort -%}
+
+<section class="index-page">
+    <h2 class="section-title">categories</h2>
+
+    <div class="index-grid">
+        {%- for category in categories -%}
+        <section class="index-group" id="{{ category[0] }}">
+            <h3 class="index-title">{{ category[0] | downcase }} <span class="index-count">{{ category[1].size }}</span></h3>
+            <ul class="index-list">
+                {%- for post in category[1] -%}
+                {%- include index-row.html doc=post -%}
+                {%- endfor -%}
+            </ul>
+        </section>
+        {%- endfor -%}
+    </div>
+</section>

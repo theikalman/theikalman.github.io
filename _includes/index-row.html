@@ -1,0 +1,4 @@
+<li class="index-row">
+    <time datetime="{{ include.doc.date | date_to_xmlschema }}">{{ include.doc.date | date: "%Y-%m-%d" }}</time>
+    <a href="{{ include.doc.url | relative_url }}">{{ include.doc.title | escape }}</a>
+</li>

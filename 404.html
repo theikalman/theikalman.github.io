@@ -1,5 +1,16 @@
 ---
 permalink: /404.html
 layout: default
+title: Not found
 ---
 
+<section class="not-found">
+    <p class="not-found-code">404</p>
+    <pre class="not-found-shell"><span class="shell-prompt">$</span> cd <span id="missing-path">that-page</span>
+cd: no such file or directory</pre>
+    <p>The page you are looking for does not exist or has moved.</p>
+    <p class="section-more"><a href="/">&larr; home</a> &nbsp; <a href="/archive">archive</a> &nbsp; <a href="/blog">blog</a></p>
+</section>
+<script>
+    document.getElementById('missing-path').textContent = window.location.pathname;
+</script>

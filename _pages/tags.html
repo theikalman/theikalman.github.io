@@ -1,0 +1,30 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+
+{%- assign tags = site.tags | sort -%}
+
+<section class="index-page">
+    <h2 class="section-title">tags</h2>
+
+    <ul class="tag-row tag-index" aria-label="All tags">
+        {%- for tag in tags -%}
+        <li><a class="tag" href="#{{ tag[0] }}">{{ tag[0] | downcase }} <span class="tag-count">{{ tag[1].size }}</span></a></li>
+        {%- endfor -%}
+    </ul>
+
+    <div class="index-grid">
+        {%- for tag in tags -%}
+        <section class="index-group" id="{{ tag[0] }}">
+            <h3 class="index-title">{{ tag[0] | downcase }} <span class="index-count">{{ tag[1].size }}</span></h3>
+            <ul class="index-list">
+                {%- for post in tag[1] -%}
+                {%- include index-row.html doc=post -%}
+                {%- endfor -%}
+            </ul>
+        </section>
+        {%- endfor -%}
+    </div>
+</section>
