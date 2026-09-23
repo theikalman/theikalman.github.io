@@ -1,0 +1,37 @@
+{%- assign p = include.project -%}
+<li class="project-card" id="{{ p.name | slugify }}">
+    <div class="project-header">
+        <h3 class="project-title">{{ p.name | escape }}</h3>
+        {%- if p.status -%}
+        <span class="project-status project-status-{{ p.status | slugify }}">{{ p.status | escape }}</span>
+        {%- endif -%}
+    </div>
+    {%- if p.role or p.period -%}
+    <p class="project-meta">
+        {%- if p.role -%}<span>{{ p.role | escape }}</span>{%- endif -%}
+        {%- if p.period -%}<span>{{ p.period | escape }}</span>{%- endif -%}
+    </p>
+    {%- endif -%}
+    <p class="project-summary">{{ p.summary | escape }}</p>
+    {%- if include.detailed and p.highlights -%}
+    <ul class="project-highlights">
+        {%- for h in p.highlights -%}
+        <li>{{ h | escape }}</li>
+        {%- endfor -%}
+    </ul>
+    {%- endif -%}
+    {%- if p.stack -%}
+    <div class="post-tags">
+        {%- for s in p.stack -%}
+        <span class="tag">{{ s | escape }}</span>
+        {%- endfor -%}
+    </div>
+    {%- endif -%}
+    {%- if p.links and p.links.size > 0 -%}
+    <div class="project-links">
+        {%- for l in p.links -%}
+        <a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label | escape }} &nearr;</a>
+        {%- endfor -%}
+    </div>
+    {%- endif -%}
+</li>

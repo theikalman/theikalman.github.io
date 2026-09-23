@@ -39,6 +39,17 @@ layout: default
     </div>
 </section>
 
+<section class="featured-projects">
+    <h2 class="section-title">Projects</h2>
+    <ul class="project-list">
+        {%- assign featured = site.data.projects | where: "featured", true | where_exp: "p", "p.draft != true" -%}
+        {%- for p in featured -%}
+        {%- include project-card.html project=p -%}
+        {%- endfor -%}
+    </ul>
+    <p><a href="/projects">&rarr; See all projects</a></p>
+</section>
+
 <section class="latest-posts">
     <h2 class="section-title">Latest Posts</h2>
     <ul class="post-list">
