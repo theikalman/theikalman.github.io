@@ -8,8 +8,8 @@ permalink: /projects/
 {%- assign groups = "professional|Professional Work,side|Side Projects,pet|Pet Projects" | split: "," -%}
 
 <section class="projects">
-    <h2 class="section-title">Projects</h2>
-    <p class="about-intro">
+    <h2 class="section-title">projects</h2>
+    <p class="page-lede">
         Things I've built - from professional work to side businesses and pet projects I hack on for fun.
     </p>
 
@@ -18,7 +18,7 @@ permalink: /projects/
     {%- assign items = projects | where: "kind", parts[0] -%}
     <h3 class="project-group-title">{{ parts[1] }}</h3>
     {%- if items.size > 0 -%}
-    <ul class="project-list">
+    <ul class="project-list project-list-detailed">
         {%- for p in items -%}
         {%- include project-card.html project=p detailed=true -%}
         {%- endfor -%}

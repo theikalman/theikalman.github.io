@@ -4,8 +4,8 @@ layout: default
 
 <section class="intro">
     <h2 class="section-title">whoami</h2>
-    <div class="about-section">
-        <div>
+    <div class="intro-grid">
+        <div class="intro-text">
             <p class="about-intro">
                 Senior Software Engineer with 10+ years of experience architecting cloud-native
                 microservices, IAM, and high-throughput real-time systems across gaming, fintech,
@@ -21,42 +21,51 @@ layout: default
                 <a href="mailto:{{ site.email }}">email</a> or a
                 <a href="https://linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a> message.
             </p>
-            <p>
-                <a href="/about">Read the full story &rarr;</a>
+            <p class="section-more">
+                <a href="/about">read the full story &rarr;</a>
             </p>
         </div>
-        <div class="author-card">
-            <div class="author-info">
-                <h3>{{ site.author }}</h3>
-                <p class="author-bio">Senior Software Engineer</p>
-                <div class="author-links">
-                    <a href="https://github.com/{{ site.github }}" target="_blank" rel="noopener">github</a>
-                    <a href="https://linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener">linkedin</a>
-                    <a href="mailto:{{ site.email }}">email</a>
-                </div>
+        <aside class="profile-card" aria-label="Profile">
+            <p class="profile-prompt" aria-hidden="true"><span>$</span> whoami --short</p>
+            <dl class="profile-list">
+                <dt>name</dt>
+                <dd>{{ site.author }}</dd>
+                <dt>role</dt>
+                <dd>Senior Software Engineer</dd>
+                <dt>focus</dt>
+                <dd>backend, distributed systems</dd>
+                <dt>stack</dt>
+                <dd>go, java, python, ts, k8s</dd>
+                <dt>status</dt>
+                <dd><span class="status-dot" aria-hidden="true"></span>open to hire</dd>
+            </dl>
+            <div class="profile-links">
+                <a href="https://github.com/{{ site.github }}" target="_blank" rel="noopener">github</a>
+                <a href="https://linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener">linkedin</a>
+                <a href="mailto:{{ site.email }}">email</a>
             </div>
-        </div>
+        </aside>
     </div>
 </section>
 
 <section class="featured-projects">
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">projects</h2>
     <ul class="project-list">
         {%- assign featured = site.data.projects | where: "featured", true | where_exp: "p", "p.draft != true" -%}
         {%- for p in featured -%}
         {%- include project-card.html project=p -%}
         {%- endfor -%}
     </ul>
-    <p><a href="/projects">&rarr; See all projects</a></p>
+    <p class="section-more"><a href="/projects">all projects &rarr;</a></p>
 </section>
 
 <section class="latest-posts">
-    <h2 class="section-title">Latest Posts</h2>
+    <h2 class="section-title">latest posts</h2>
     <ul class="post-list">
         {%- assign recent_posts = site.posts | slice: 0, 5 -%}
         {%- for post in recent_posts -%}
         {%- include post-preview.html post=post -%}
         {%- endfor -%}
     </ul>
-    <p><a href="/blog">&rarr; Read more posts</a></p>
+    <p class="section-more"><a href="/blog">all posts &rarr;</a></p>
 </section>
