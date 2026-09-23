@@ -9,6 +9,7 @@
     {%- if p.role or p.period -%}
     <p class="project-meta">
         {%- if p.role -%}<span>{{ p.role | escape }}</span>{%- endif -%}
+        {%- if p.role and p.period %} <span class="project-meta-sep" aria-hidden="true">&middot;</span> {% endif -%}
         {%- if p.period -%}<span>{{ p.period | escape }}</span>{%- endif -%}
     </p>
     {%- endif -%}
