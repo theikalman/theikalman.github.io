@@ -1,0 +1,34 @@
+---
+layout: default
+permalink: /archive
+title: Archive
+---
+
+{%- assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
+{%- assign photos = site.photography | sort: "date" | reverse -%}
+
+<section class="index-page">
+    <h2 class="section-title">archive</h2>
+    <p class="page-lede">Everything published here, newest first: {{ site.posts.size }} posts and {{ photos.size }} photo sets.</p>
+
+    <h3 class="project-group-title">posts</h3>
+    <div class="archive-years">
+        {%- for year in years -%}
+        <section class="archive-year" id="y{{ year.name }}">
+            <h4 class="archive-year-title">{{ year.name }}</h4>
+            <ul class="index-list">
+                {%- for post in year.items -%}
+                {%- include index-row.html doc=post -%}
+                {%- endfor -%}
+            </ul>
+        </section>
+        {%- endfor -%}
+    </div>
+
+    <h3 class="project-group-title">photography</h3>
+    <ul class="index-list">
+        {%- for photo in photos -%}
+        {%- include index-row.html doc=photo -%}
+        {%- endfor -%}
+    </ul>
+</section>

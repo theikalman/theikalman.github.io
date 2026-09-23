@@ -2,26 +2,26 @@
 layout: default
 ---
 
-<h2 class="section-title">Photography</h2>
+<h2 class="section-title">photography</h2>
 
-{% assign photos = site.photography %}
+{% assign photos = site.photography | sort: "date" | reverse %}
 
 {%- if photos.size > 0 -%}
-<div class="photography-grid">
+<ul class="photo-grid">
     {%- for photo in photos -%}
-    <article class="photo-card">
-        {%- if photo.image -%}
-        <img src="{{ photo.image }}" alt="{{ photo.title | escape }}">
-        {%- endif -%}
-        <div class="photo-info">
-            <h3 class="photo-title">
-                <a href="{{ photo.url | relative_url }}">{{ photo.title | escape }}</a>
-            </h3>
-            <span class="photo-date">{{ photo.date | date: "%Y-%m-%d" }}</span>
-        </div>
-    </article>
+    <li class="photo-card">
+        <a class="photo-link" href="{{ photo.url | relative_url }}">
+            {%- if photo.image -%}
+            <img src="{{ photo.image }}" alt="" loading="lazy">
+            {%- endif -%}
+            <span class="photo-info">
+                <span class="photo-title">{{ photo.title | escape }}</span>
+                <time class="photo-date" datetime="{{ photo.date | date_to_xmlschema }}">{{ photo.date | date: "%Y-%m-%d" }}</time>
+            </span>
+        </a>
+    </li>
     {%- endfor -%}
-</div>
+</ul>
 {%- endif -%}
 
 {{ content }}
