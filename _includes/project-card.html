@@ -22,11 +22,11 @@
     </ul>
     {%- endif -%}
     {%- if p.stack -%}
-    <div class="post-tags">
+    <ul class="tag-row" aria-label="Stack">
         {%- for s in p.stack -%}
-        <span class="tag">{{ s | escape }}</span>
+        <li><span class="tag">{{ s | escape }}</span></li>
         {%- endfor -%}
-    </div>
+    </ul>
     {%- endif -%}
     {%- if p.links and p.links.size > 0 -%}
     <div class="project-links">

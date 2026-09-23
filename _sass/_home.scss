@@ -1,0 +1,278 @@
+// Landing page and projects.
+
+.intro-grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-intro,
+.page-lede {
+  font-size: var(--fs-md);
+  line-height: 1.55;
+  color: var(--fg);
+}
+
+.page-lede {
+  color: var(--fg-muted);
+  max-width: var(--measure);
+}
+
+.intro-text p:not(.about-intro) {
+  color: var(--fg-muted);
+}
+
+.profile-card {
+  align-self: start;
+  background-color: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+
+.profile-prompt {
+  color: var(--fg-muted);
+  margin: 0 0 var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px dashed var(--line);
+}
+
+.profile-prompt span {
+  color: var(--fg-subtle);
+}
+
+.profile-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-1) var(--space-4);
+  margin: 0;
+}
+
+.profile-list dt {
+  color: var(--fg-subtle);
+}
+
+.profile-list dd {
+  color: var(--fg);
+  margin: 0;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.5ch;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  vertical-align: 0.05em;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-3);
+  padding-top: var(--space-2);
+  border-top: 1px dashed var(--line);
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-4);
+}
+
+.project-card:hover {
+  border-color: var(--line-strong);
+}
+
+.project-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.project-title {
+  font-size: var(--fs-md);
+  margin: 0;
+}
+
+// Status is carried by a glyph and border style as well as the label,
+// so it reads the same regardless of color perception.
+.project-status {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1.6;
+  color: var(--fg-muted);
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+  padding: 0 0.45em;
+  white-space: nowrap;
+}
+
+.project-status::before {
+  content: '\25CF\00a0';
+  color: var(--fg-subtle);
+}
+
+.project-status-active {
+  color: var(--fg);
+  border-color: var(--accent);
+}
+
+.project-status-active::before {
+  color: var(--accent);
+}
+
+.project-status-alpha,
+.project-status-beta {
+  border-style: dashed;
+}
+
+.project-status-alpha::before,
+.project-status-beta::before {
+  content: '\25D0\00a0';
+}
+
+.project-status-shipped::before {
+  content: '\25A0\00a0';
+}
+
+.project-status-archived {
+  border-style: dotted;
+}
+
+.project-status-archived::before {
+  content: '\25CB\00a0';
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--fg-subtle);
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.project-summary {
+  color: var(--fg-muted);
+  font-size: var(--fs-sm);
+  margin: 0;
+}
+
+.project-highlights {
+  color: var(--fg-muted);
+  font-size: var(--fs-sm);
+  margin: var(--space-2) 0 0;
+  padding-left: 1.1em;
+}
+
+.project-highlights li {
+  margin-bottom: var(--space-1);
+}
+
+.project-highlights li::marker {
+  content: '- ';
+}
+
+.project-card .tag-row {
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+
+.project-group-title {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--fg-muted);
+  margin: var(--space-5) 0 var(--space-2);
+}
+
+.project-group-title::before {
+  content: '## ';
+  color: var(--fg-subtle);
+}
+
+.project-empty {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--fg-subtle);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-4);
+}
+
+@media (min-width: 48rem) {
+  .intro-grid {
+    grid-template-columns: minmax(0, 1fr) 18rem;
+    gap: var(--space-6);
+  }
+
+  .project-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 72rem) {
+  .intro-grid {
+    grid-template-columns: minmax(0, 1fr) 20rem;
+  }
+}
+
+// Detailed cards (/projects) span the full width; highlights move into a
+// second column beside the summary so each card stays short.
+.project-list-detailed {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 60rem) {
+  .project-list-detailed .project-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    grid-auto-rows: min-content;
+    column-gap: var(--space-6);
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .project-list-detailed .project-card > * {
+    grid-column: 1;
+  }
+
+  .project-list-detailed .project-highlights {
+    grid-column: 2;
+    grid-row: 1 / span 5;
+    margin: 0;
+    padding-left: var(--space-5);
+    border-left: 1px solid var(--line);
+  }
+}
