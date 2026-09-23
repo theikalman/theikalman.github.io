@@ -1,0 +1,68 @@
+# Projects shown on /projects and the landing page.
+#
+# Fields:
+#   name        (required) project name
+#   kind        (required) professional | side | pet - used for grouping
+#   role        your role, e.g. "Founder", "Senior Backend Engineer at X"
+#   period      free text, e.g. "2026 - present"
+#   status      short label, e.g. "active", "alpha", "shipped"
+#   summary     (required) one or two sentences, shown on cards
+#   highlights  list of bullet points, shown on /projects
+#   stack       list of technologies
+#   links       list of { label, url }
+#   featured    true to also show it on the landing page
+#   draft       true to hide it everywhere (for entries still being written)
+
+- name: Nixiza
+  kind: side
+  role: Founder, PT Yakin Maju Teknologi
+  period: 2026 - present
+  status: active
+  featured: true
+  summary: >-
+    Cloud-based Electronic Medical Record (Rekam Medis Elektronik) SaaS for
+    independent Indonesian clinics, running many clinics on one multi-tenant
+    platform.
+  highlights:
+    - Covers the full outpatient flow - registration, queue, vital signs, SOAP notes with ICD-10 diagnosis, e-prescription, pharmacy dispensing, billing and lab.
+    - Pharmacy inventory with batch and expiry tracking, FEFO stock reservation, purchase orders, goods receipt with unit conversion, stock opname and an append-only inventory ledger.
+    - Integrations with SATUSEHAT (the national FHIR health data platform) and BPJS Kesehatan, the national health insurance.
+    - Built around the Rekam Medis Elektronik regulation (Permenkes 24/2022) - audit trail, role-based access and strict data isolation between clinics.
+  stack: [Laravel, PHP, Svelte 5, Inertia.js, Tailwind CSS, PostgreSQL]
+  links:
+    - label: nixiza.com
+      url: https://nixiza.com
+
+- name: Oyot
+  kind: pet
+  role: Author
+  period: 2026 - present
+  status: alpha
+  featured: true
+  summary: >-
+    Local-first note-taking app, inspired by LogSeq, that syncs directly
+    between your own devices over encrypted peer-to-peer connections - no
+    server, no account.
+  highlights:
+    - Notes live in SQLite on each device as Yjs CRDTs, so devices converge after being apart without a central copy.
+    - Peer-to-peer sync over WebRTC data channels, with mDNS discovery on the local network and direct addressing over a VPN you already run.
+    - Every device is identified by an Ed25519 public key and every signaling message is signed; pairing is explicit and confirmed by device ID or QR code.
+    - Runs on macOS, Windows, Linux, Android and iOS from one Tauri codebase, with 23 architecture decision records documenting the trade-offs.
+  stack: [Rust, Tauri 2, SvelteKit, TypeScript, SQLite, Yjs, WebRTC]
+  links:
+    - label: source
+      url: https://github.com/theikalman/oyot
+
+# Template for a professional project - copy, fill in, and remove `draft`.
+# - name: Project name
+#   kind: professional
+#   role: Senior Software Engineer at Company
+#   period: 2023 - 2025
+#   status: shipped
+#   summary: >-
+#     What it is and why it mattered, in one or two sentences.
+#   highlights:
+#     - Impact with numbers where you can, e.g. throughput, users, latency.
+#   stack: [Go, Kubernetes]
+#   links: []
+#   draft: true
