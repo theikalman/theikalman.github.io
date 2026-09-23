@@ -1,25 +1,13 @@
 ---
 layout: null
 ---
-
+{%- assign docs = site.posts | concat: site.photography -%}
 [
-  {% for post in site.posts %}
-    {
-
-      "title"    : "{{ post.title | strip_html | escape }}",
-      "url"      : "{{ post.url }}",
-      "content"  : {{ post.content | strip_html | strip_newline | strip | jsonify }}
-
-    },
-  {% endfor %}
-
-  {% for post in site.photography %}
-    {
-
-      "title"    : "{{ post.title | strip_html | escape }}",
-      "url"      : "{{ post.url }}",
-      "content"  : {{ post.content | strip_html | strip_newline | strip | jsonify }}
-
-    },
-  {% endfor %}
+  {%- for doc in docs %}
+  {
+    "title": {{ doc.title | strip_html | jsonify }},
+    "url": {{ doc.url | jsonify }},
+    "content": {{ doc.content | strip_html | strip_newlines | strip | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+  {%- endfor %}
 ]
