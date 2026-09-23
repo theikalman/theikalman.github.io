@@ -5,18 +5,25 @@ layout: default
 <article class="post-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="post-kicker"><a href="/photography">photos</a> <span aria-hidden="true">/</span></p>
+        <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
         <div class="post-meta">
-            <span>{{ page.date | date: "%Y-%m-%d" }}</span>
-            {%- if page.author -%}
-            <span>by {{ page.author }}</span>
-            {%- endif -%}
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y-%m-%d" }}</time>
+            {%- if page.author %}
+            <span class="post-meta-sep" aria-hidden="true">&middot;</span>
+            <span itemprop="author">{{ page.author }}</span>
+            {%- endif %}
         </div>
     </header>
 
-    <div class="post-content" itemprop="articlebody">
+    <div class="post-content" itemprop="articleBody">
         {{ content }}
     </div>
+
+    <footer class="post-footer">
+        <a href="/photography">&larr; all photos</a>
+        <a href="#content">top &uarr;</a>
+    </footer>
 
     <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
