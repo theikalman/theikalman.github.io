@@ -82,20 +82,3 @@
 :root[data-theme="light"] {
   @include light-theme;
 }
-
-// Aliases for rules that still use the pre-redesign names.
-:root {
-  --bg-primary: var(--bg);
-  --bg-secondary: var(--bg-elev);
-  --bg-tertiary: var(--bg-sunken);
-  --border-color: var(--line);
-  --text-primary: var(--fg);
-  --text-secondary: var(--fg-muted);
-  --text-muted: var(--fg-subtle);
-  --accent-green: var(--accent);
-  --accent-blue: var(--accent);
-  --accent-purple: var(--fg-muted);
-  --accent-yellow: var(--syn-number);
-  --accent-cyan: var(--accent-strong);
-  --accent-orange: var(--syn-number);
-}
