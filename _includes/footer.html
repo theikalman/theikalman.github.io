@@ -1,11 +1,12 @@
-<footer class="footer">
-    <div class="footer-links">
-        <a href="https://github.com/{{site.github}}" target="_blank" rel="noopener">github</a>
-        <a href="https://instagram.com/{{site.instagram}}" target="_blank" rel="noopener">instagram</a>
-        <a href="mailto:{{site.email}}">email</a>
-        <a href="/feed.xml">rss</a>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p class="footer-text">&copy; {{ site.time | date: "%Y" }} {{ site.author }}</p>
+        <nav class="footer-links" aria-label="Elsewhere">
+            <a href="https://github.com/{{ site.github }}" target="_blank" rel="noopener">github</a>
+            <a href="https://linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener">linkedin</a>
+            <a href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener">instagram</a>
+            <a href="mailto:{{ site.email }}">email</a>
+            <a href="/feed.xml">rss</a>
+        </nav>
     </div>
-    <p class="footer-text">
-        © 2026 AjiYakin
-    </p>
 </footer>

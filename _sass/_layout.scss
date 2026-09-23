@@ -1,0 +1,346 @@
+.container {
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-2);
+  top: -3rem;
+  z-index: 20;
+  background: var(--bg-elev);
+  border: 1px solid var(--line-strong);
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+}
+
+// Header: one row on wide screens; on small ones the nav drops to a second,
+// horizontally scrollable row.
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "brand tools"
+    "nav   nav";
+  align-items: center;
+  column-gap: var(--space-4);
+  padding-top: var(--space-3);
+}
+
+.brand {
+  grid-area: brand;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: var(--fs-md);
+  color: var(--fg);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand:hover {
+  color: var(--fg);
+}
+
+.brand-prompt {
+  color: var(--fg-subtle);
+  margin-right: 0.5ch;
+}
+
+.brand::after {
+  content: '';
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  margin-left: 0.2ch;
+  vertical-align: -0.15em;
+  background-color: var(--accent);
+  animation: cursor-blink 1.1s steps(1) infinite;
+}
+
+@keyframes cursor-blink {
+  50% { opacity: 0; }
+}
+
+.nav {
+  grid-area: nav;
+  display: flex;
+  gap: var(--space-1);
+  margin: var(--space-2) calc(var(--gutter) * -1) 0;
+  padding: 0 var(--gutter) var(--space-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav a {
+  flex-shrink: 0;
+  color: var(--fg-muted);
+  text-decoration: none;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius);
+}
+
+.nav a:hover {
+  color: var(--fg);
+  background-color: var(--bg-elev);
+}
+
+// The current page is marked by weight and an underline bar, not only color.
+.nav a[aria-current="page"] {
+  color: var(--fg);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--accent);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.header-tools {
+  grid-area: tools;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  max-width: 18rem;
+  min-width: 0;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 0;
+  background-color: var(--bg-sunken);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0 var(--space-2);
+  height: 2rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+
+.search-box:focus-within {
+  border-color: var(--accent);
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--fg);
+  font: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-box input::placeholder {
+  color: var(--fg-subtle);
+}
+
+.search-box input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-icon {
+  color: var(--fg-subtle);
+}
+
+.search-hint {
+  color: var(--fg-subtle);
+  font-size: var(--fs-xs);
+  line-height: 1.3;
+}
+
+.search-box:focus-within .search-hint {
+  visibility: hidden;
+}
+
+// Keyboard shortcut hint is noise on touch devices.
+@media (hover: none) {
+  .search-hint {
+    display: none;
+  }
+}
+
+.theme-toggle {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  color: var(--fg-muted);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--fg);
+  border-color: var(--line-strong);
+}
+
+.search-results-wrap {
+  position: relative;
+}
+
+.search-results {
+  position: absolute;
+  top: var(--space-1);
+  left: var(--gutter);
+  right: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-elev);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.search-results:empty {
+  display: none;
+}
+
+.search-result {
+  padding: var(--space-2) var(--space-3);
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.search-result:last-child {
+  border-bottom: 0;
+}
+
+.search-result::before {
+  content: '> ';
+  color: var(--fg-subtle);
+}
+
+.search-result:hover,
+.search-result:focus {
+  background-color: var(--accent-soft);
+  color: var(--fg);
+}
+
+.search-empty {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  color: var(--fg-subtle);
+}
+
+.site-main {
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-6);
+  min-height: 60vh;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--fg-subtle);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-5);
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+}
+
+.footer-text {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+}
+
+.footer-links a {
+  color: var(--fg-muted);
+}
+
+.footer-links a:hover {
+  color: var(--fg);
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --gutter: 1.5rem;
+  }
+}
+
+@media (min-width: 60rem) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    background-color: color-mix(in srgb, var(--bg) 88%, transparent);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+
+  .header-inner {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "brand nav tools";
+    height: 3.25rem;
+    padding-top: 0;
+  }
+
+  .nav {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .nav a[aria-current="page"] {
+    box-shadow: none;
+    background-color: var(--bg-elev);
+    border-radius: var(--radius);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.45em;
+  }
+
+  .header-tools {
+    width: 16rem;
+  }
+
+  .search-results {
+    left: auto;
+    width: 26rem;
+  }
+}
