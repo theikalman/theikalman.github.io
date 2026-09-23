@@ -1,0 +1,113 @@
+// Rouge syntax highlighting.
+//
+// A restrained palette from the --syn-* tokens. Token classes also differ
+// by weight and style (bold keywords, italic comments) so code stays
+// scannable without relying on hue.
+
+.highlighter-rouge {
+  margin: 1.25em 0;
+}
+
+.highlight {
+  background-color: var(--bg-sunken);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+
+.highlight pre {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1,
+.highlight .cs, .highlight .ch, .highlight .cpf {
+  color: var(--syn-comment);
+  font-style: italic;
+}
+
+.highlight .cp {
+  color: var(--syn-comment);
+}
+
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr,
+.highlight .kv, .highlight .kd, .highlight .ow {
+  color: var(--syn-keyword);
+  font-weight: 600;
+}
+
+.highlight .kc, .highlight .kt {
+  color: var(--syn-name);
+}
+
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd,
+.highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1,
+.highlight .sr, .highlight .si, .highlight .se, .highlight .ss,
+.highlight .sa, .highlight .dl {
+  color: var(--syn-string);
+}
+
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi,
+.highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: var(--syn-number);
+}
+
+.highlight .nf, .highlight .fm, .highlight .nc, .highlight .nn,
+.highlight .nb, .highlight .bp, .highlight .nt {
+  color: var(--syn-name);
+}
+
+.highlight .na, .highlight .no, .highlight .nv, .highlight .vc,
+.highlight .vg, .highlight .vi, .highlight .n, .highlight .nx {
+  color: var(--fg);
+}
+
+.highlight .o, .highlight .p {
+  color: var(--syn-punct);
+}
+
+.highlight .err {
+  color: inherit;
+  background: transparent;
+  text-decoration: underline wavy var(--syn-number);
+}
+
+// Diffs: marked by a gutter sign and weight, not just red/green.
+.highlight .gi {
+  color: var(--syn-string);
+  background-color: var(--accent-soft);
+}
+
+.highlight .gd {
+  color: var(--syn-number);
+  text-decoration: line-through;
+}
+
+.highlight .gh, .highlight .gu {
+  color: var(--syn-name);
+  font-weight: 600;
+}
+
+.highlight .gs { font-weight: 600; }
+.highlight .ge { font-style: italic; }
+
+.highlight table {
+  margin: 0;
+  font-size: inherit;
+}
+
+.highlight table td {
+  padding: 0;
+  border: 0;
+}
+
+.highlight .lineno,
+.highlight .gutter {
+  color: var(--fg-subtle);
+  text-align: right;
+  user-select: none;
+  padding-right: var(--space-3);
+  border-right: 1px solid var(--line);
+}
