@@ -84,6 +84,9 @@
   padding: 0 var(--gutter) var(--space-2);
   overflow-x: auto;
   scrollbar-width: none;
+  // Fade the trailing edge to hint that the row scrolls sideways.
+  -webkit-mask-image: linear-gradient(to right, #000 85%, transparent);
+  mask-image: linear-gradient(to right, #000 85%, transparent);
   font-family: var(--font-mono);
   font-size: var(--fs-sm);
 }
@@ -323,6 +326,8 @@
     margin: 0;
     padding: 0;
     overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .nav a[aria-current="page"] {
