@@ -16,6 +16,8 @@ is how I deployed [Headscale](https://headscale.net) on my VPS as a Docker Swarm
 stack behind Traefik, with its own embedded DERP relay, plus the problems I hit
 along the way.
 
+![A tailnet of my laptop, phone, home server and desktop, coordinated by Headscale on a VPS](/postimages/headscale-tailnet.jpg)
+
 ## Why
 
 I already run a VPN on my VPS, so why bother? Because I don't want to be
